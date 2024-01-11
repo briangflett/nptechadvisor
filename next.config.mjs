@@ -1,22 +1,25 @@
 import postgres from "postgres";
-import withBundleAnalyzer from "@next/bundle-analyzer";
+// import withBundleAnalyzer from "@next/bundle-analyzer";
 // import pkg from "next";
-import path from "path";
+// import path from "path";
+import withMDX from "@next/mdx";
 
 // const { defineConfig } = pkg;
+const mdx = withMDX();
 
 export const sql = postgres(process.env.POSTGRES_URL, {
   ssl: "allow",
 });
 
-const bundleAnalyzer = withBundleAnalyzer({
-  enabled: process.env.ANALYZE === "true",
-});
+// const bundleAnalyzer = withBundleAnalyzer({
+//   enabled: process.env.ANALYZE === "true",
+// });
 
 const nextConfig = {
   experimental: {
     ppr: true,
     useLightningcss: true,
+    webpackBuildWorker: true,
   },
   async redirects() {
     if (!process.env.POSTGRES_URL) {
@@ -42,10 +45,11 @@ const nextConfig = {
       },
     ];
   },
-  webpack(config) {
-    config.resolve.alias["@"] = path.join(__dirname, "/");
-    return config;
-  },
+  // webpack(config) {
+  //   config.resolve.alias["@"] = path.join(__dirname, "/");
+  //   return config;
+  // },
+  pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
 };
 
 const ContentSecurityPolicy = `
@@ -90,4 +94,5 @@ const securityHeaders = [
   },
 ];
 
-export default bundleAnalyzer(nextConfig);
+// export default bundleAnalyzer(mdx(nextConfig));
+export default mdx(nextConfig);
