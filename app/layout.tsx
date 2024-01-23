@@ -1,8 +1,8 @@
-import "@/global.css";
+import "../styles/index.css";
 import type { Metadata } from "next";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
-import ScrollToTop from "@/components/ScrollToTop";
+import Footer from "./components/footer";
+import Header from "./components/header";
+import ScrollToTop from "./components/scroll-to-top";
 import { Inter } from "next/font/google";
 // import "node_modules/react-modal-video/css/modal-video.css";
 import { Providers } from "./providers";
@@ -24,17 +24,17 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+  // robots: {
+  //   index: true,
+  //   follow: true,
+  //   googleBot: {
+  //     index: true,
+  //     follow: true,
+  //     "max-video-preview": -1,
+  //     "max-image-preview": "large",
+  //     "max-snippet": -1,
+  //   },
+  // },
   twitter: {
     title: "Brian Flett",
     card: "summary_large_image",

@@ -1,0 +1,17 @@
+import { useAuth } from "../auth-context";
+import { GetStartedButton } from "../components/buttons";
+
+const ProfilePage = () => {
+  const { user, logout } = useAuth();
+
+  return (
+    <div className="flex min-h-screen flex-col items-center justify-center py-2">
+      <h1>Profile Page</h1>
+      <p>Email: {user.email}</p>
+      <GetStartedButton />
+      <button onClick={logout}>Logout</button>
+    </div>
+  );
+};
+
+export default ProfilePage;
