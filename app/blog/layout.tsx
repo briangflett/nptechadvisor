@@ -1,6 +1,7 @@
 "use client";
 import { usePathname } from "next/navigation";
 import blogData from "../blog-index/blog-data";
+import { Blog } from "../types/blog";
 import "./mdx-styles.css";
 import Image from "next/image";
 import { CustomMDX } from "./mdx-components";
@@ -8,23 +9,22 @@ import { CustomMDX } from "./mdx-components";
 export default function MdxLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const slug = pathname.substring(pathname.lastIndexOf("/") + 1);
-  const { title, image, paragraph, author, tags, publishDate } = blogData.find(
-    (blog) => blog.slug === slug,
-  );
-  // Create any shared layout or styles here
-  return (
-    <main className="pb[160px] pt-[160px]">
-      <div className="container">
-        <div className="-mx-4 flex flex-wrap justify-center">
-          <div className="w-full px-4 lg:w-8/12">
-            <CustomMDX>
-              <div>
-                {/* Title */}
-                <h2 className="mb-8 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight">
-                  {title}
-                </h2>
-                <div className="mb-10 flex flex-wrap items-center justify-between border-b border-body-color border-opacity-10 pb-4 dark:border-white dark:border-opacity-10">
-                  {/* <div className="flex flex-wrap items-center">
+  let blog = blogData.find((blog) => blog.slug === slug);
+  if (blog) {
+    let { title, image, paragraph, author, tags, publishDate } = blog;
+    return (
+      <main className="pb[160px] pt-[160px]">
+        <div className="container">
+          <div className="-mx-4 flex flex-wrap justify-center">
+            <div className="w-full px-4 lg:w-8/12">
+              <CustomMDX>
+                <div>
+                  {/* Title */}
+                  <h2 className="mb-8 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight">
+                    {title}
+                  </h2>
+                  <div className="mb-10 flex flex-wrap items-center justify-between border-b border-body-color border-opacity-10 pb-4 dark:border-white dark:border-opacity-10">
+                    {/* <div className="flex flex-wrap items-center">
                   <div className="mb-5 mr-10 flex items-center">
                     <div className="mr-4">
                       <div className="relative h-10 w-10 overflow-hidden rounded-full">
@@ -98,31 +98,47 @@ export default function MdxLayout({ children }: { children: React.ReactNode }) {
                     {tags}
                   </a>
                 </div> */}
-                </div>
-                <div>
-                  {/* Abstract Paragraph */}
-                  <p className="mb-10 text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed">
-                    {paragraph}
-                  </p>
-                  {/* Image */}
-                  <div className="mb-10 w-full overflow-hidden rounded">
-                    <div className="relative aspect-[97/60] w-full sm:aspect-[97/44]">
-                      <Image
-                        src={image}
-                        alt="image"
-                        fill
-                        className="object-cover object-center"
-                      />
-                    </div>
                   </div>
-                  {/* Content */}
-                  {children}
+                  <div>
+                    {/* Abstract Paragraph */}
+                    <p className="mb-10 text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed">
+                      {paragraph}
+                    </p>
+                    {/* Image */}
+                    <div className="mb-10 w-full overflow-hidden rounded">
+                      <div className="relative aspect-[97/60] w-full sm:aspect-[97/44]">
+                        <Image
+                          src={image}
+                          alt="image"
+                          fill
+                          className="object-cover object-center"
+                        />
+                      </div>
+                    </div>
+                    {/* Content */}
+                    {children}
+                  </div>
                 </div>
-              </div>
-            </CustomMDX>
+              </CustomMDX>
+            </div>
           </div>
         </div>
-      </div>
-    </main>
-  );
+      </main>
+    );
+  } else {
+    // ... handle the case when no blog with the matching slug is found ...
+    return (
+      <main className="pb[160px] pt-[160px]">
+        <div className="container">
+          <div className="-mx-4 flex flex-wrap justify-center">
+            <div className="w-full px-4 lg:w-8/12">
+              <h2 className="mb-8 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight">
+                Blog not found
+              </h2>
+            </div>
+          </div>
+        </div>
+      </main>
+    );
+  }
 }
