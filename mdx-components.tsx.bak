@@ -1,39 +1,47 @@
-import Link from "next/link";
-import Image from "next/image";
-import { MDXRemote } from "next-mdx-remote/rsc";
-import React from "react";
+import type { MDXComponents } from "mdx/types";
+
+export function useMDXComponents(components: MDXComponents): MDXComponents {
+  return {
+    ...components,
+  };
+}
+
+// import Link from "next/link";
+// import Image from "next/image";
+// import { MDXRemote } from "next-mdx-remote/rsc";
+// import React from "react";
 // import { TweetComponent } from './tweet';d
 // import { highlight } from 'sugar-high';
 // import { LiveCode } from './sandpack';
 
-type TableProps = {
-  data: {
-    headers: string[];
-    rows: string[][];
-  };
-};
+// type TableProps = {
+//   data: {
+//     headers: string[];
+//     rows: string[][];
+//   };
+// };
 
-function Table({ data }: TableProps) {
-  let headers = data.headers.map((header, index) => (
-    <th key={index}>{header}</th>
-  ));
-  let rows = data.rows.map((row, index) => (
-    <tr key={index}>
-      {row.map((cell, cellIndex) => (
-        <td key={cellIndex}>{cell}</td>
-      ))}
-    </tr>
-  ));
+// function Table({ data }: TableProps) {
+//   let headers = data.headers.map((header, index) => (
+//     <th key={index}>{header}</th>
+//   ));
+//   let rows = data.rows.map((row, index) => (
+//     <tr key={index}>
+//       {row.map((cell, cellIndex) => (
+//         <td key={cellIndex}>{cell}</td>
+//       ))}
+//     </tr>
+//   ));
 
-  return (
-    <table>
-      <thead>
-        <tr>{headers}</tr>
-      </thead>
-      <tbody>{rows}</tbody>
-    </table>
-  );
-}
+//   return (
+//     <table>
+//       <thead>
+//         <tr>{headers}</tr>
+//       </thead>
+//       <tbody>{rows}</tbody>
+//     </table>
+//   );
+// }
 
 // function CustomLink(props) {
 //   let href = props.href;
@@ -156,29 +164,29 @@ function Table({ data }: TableProps) {
 //   };
 // }
 
-let components = {
-  // h1: createHeading(1),
-  // h2: createHeading(2),
-  // h3: createHeading(3),
-  // h4: createHeading(4),
-  // h5: createHeading(5),
-  // h6: createHeading(6),
-  // Image: RoundedImage,
-  // a: CustomLink,
-  // Callout,
-  // ProsCard,
-  // ConsCard,
-  Table,
-  // StaticTweet: TweetComponent,
-  // code: Code,
-  // LiveCode,
-};
+// let components = {
+// h1: createHeading(1),
+// h2: createHeading(2),
+// h3: createHeading(3),
+// h4: createHeading(4),
+// h5: createHeading(5),
+// h6: createHeading(6),
+// Image: RoundedImage,
+// a: CustomLink,
+// Callout,
+// ProsCard,
+// ConsCard,
+// Table,
+// StaticTweet: TweetComponent,
+// code: Code,
+// LiveCode,
+// };
 
-export function CustomMDX(props: any) {
-  return (
-    <MDXRemote
-      {...props}
-      components={{ ...components, ...(props.components || {}) }}
-    />
-  );
-}
+// export function CustomMDX(props: any) {
+//   return (
+//     <MDXRemote
+//       {...props}
+//       components={{ ...components, ...(props.components || {}) }}
+//     />
+//   );
+// }
