@@ -5,8 +5,8 @@ import brian from "@/public/wordpress/Brian-in-Office-small-1024x534.jpg";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Page | Free Next.js Template for Startup and SaaS",
-  description: "This is About Page for Startup Nextjs Template",
+  title: "About",
+  description: "About Page for NPTechAdvisor",
   // other metadata
 };
 

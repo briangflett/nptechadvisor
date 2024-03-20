@@ -8,8 +8,8 @@ import Volunteer from "./components/volunteer";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Free Next.js Template for Startup and SaaS",
-  description: "This is Home for Startup Nextjs Template",
+  title: "NPTechAdvisor",
+  description: "Home Page for NPTechAdvisor",
   // other metadata
 };
 

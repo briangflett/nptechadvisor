@@ -5,8 +5,8 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Products Page | NPTechAdvisor",
-  description: "This is the Products Page for NPTechAdvisor",
+  title: "Products",
+  description: "Products Page for NPTechAdvisor",
   // other metadata
 };
 

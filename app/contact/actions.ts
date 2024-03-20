@@ -60,6 +60,7 @@ export const createContact = async (
     interest: {
       newsletter: formData.get("newsletter"),
       services: formData.get("services"),
+      products: formData.get("products"),
       volunteer: formData.get("volunteer"),
       other: formData.get("other"),
     },

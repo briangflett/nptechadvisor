@@ -3,8 +3,8 @@ import ContactForm from "./contact-form";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Free Next.js Template for Startup and SaaS",
-  description: "This is Home for Startup Nextjs Template",
+  title: "Contact",
+  description: "Contact Page for NPTechAdvisor",
   // other metadata
 };
 
@@ -16,7 +16,7 @@ const ContactPage = () => {
           <div className="-mx-4 flex flex-wrap justify-center">
             <div className="w-full px-4 lg:w-8/12">
               <h1 className="mb-4 text-3xl font-bold !leading-tight text-black dark:text-white sm:text-4xl md:text-[45px]">
-                Connect
+                Contact
               </h1>
               <div></div>
               <p className="mx-auto mb-4 text-base !leading-relaxed text-body-color md:text-lg">
