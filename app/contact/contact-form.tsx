@@ -131,6 +131,21 @@ export default function CaontactForm() {
                       <div>
                         <input
                           type="checkbox"
+                          id="products"
+                          name="products"
+                          defaultChecked={interest === "Products"}
+                          className="form-checkbox h-5 w-5 text-blue-600"
+                        />
+                        <label
+                          htmlFor="products"
+                          className="ml-2 font-medium text-blue-400"
+                        >
+                          Products
+                        </label>
+                      </div>
+                      <div>
+                        <input
+                          type="checkbox"
                           id="other"
                           name="other"
                           defaultChecked={interest === "Other"}
