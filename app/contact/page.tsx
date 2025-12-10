@@ -1,4 +1,3 @@
-import { useParams } from "next/navigation";
 import ContactForm from "./contact-form";
 import { Metadata } from "next";
 

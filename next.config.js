@@ -8,8 +8,15 @@ const nextConfig = {
   env: {
     PORT: '3001',
   },
-  // Enable Turbopack (Next.js 16 default)
-  turbopack: {},
+  // Configure Turbopack for MDX support
+  turbopack: {
+    rules: {
+      '*.mdx': {
+        loaders: ['@mdx-js/loader'],
+        as: '*.js',
+      },
+    },
+  },
   // Optionally, add any other Next.js config below
 };
 
