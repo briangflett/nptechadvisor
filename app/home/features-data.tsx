@@ -17,7 +17,7 @@ const featuresData: Feature[] = [
       "It all starts with an assessment of your current use of technology. What tools are you using, and how do they support your strategic objectives?​",
   },
   {
-    id: 1,
+    id: 2,
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" className="fill-current">
         <path
@@ -32,7 +32,7 @@ const featuresData: Feature[] = [
       "We help you prioritize the recommendations coming out of the assessment, and develop a strategic approach to implementing technology over time.​",
   },
   {
-    id: 1,
+    id: 3,
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" className="fill-current">
         <path
@@ -47,7 +47,7 @@ const featuresData: Feature[] = [
       "How are you finding clients, volunteers, and donors? Is your website professional and optimized for search engines? How do you keep the content fresh and relevant?",
   },
   {
-    id: 1,
+    id: 4,
     icon: (
       <svg width="40" height="42" viewBox="0 0 40 42" className="fill-current">
         <path
@@ -62,7 +62,7 @@ const featuresData: Feature[] = [
       "Does your target audience use Facebook, LinkedIn, Instagram, Pinterest, or other social media? What platforms do you need to be active on, and how do you repurpose content for multiple platforms?​",
   },
   {
-    id: 1,
+    id: 5,
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" className="fill-current">
         <path
@@ -77,7 +77,7 @@ const featuresData: Feature[] = [
       "Do you understand why people give? Do you have ongoing connection with existing donors, and do you know what messaging resonates with new donors? Are you maximizing your digital fundraising?​",
   },
   {
-    id: 1,
+    id: 6,
     icon: (
       <svg width="40" height="45" viewBox="0 0 40 45" className="fill-current">
         <path

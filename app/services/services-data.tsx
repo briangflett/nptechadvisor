@@ -17,7 +17,7 @@ const servicesData: Feature[] = [
       "Review your current use of technology in support of your mission and recommend improvements.​​",
   },
   {
-    id: 1,
+    id: 2,
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" className="fill-current">
         <path
@@ -32,7 +32,7 @@ const servicesData: Feature[] = [
       "Develop an overall Search Engine Optimization and digital marketing strategy, or assist in a specific digital campaign.​​",
   },
   {
-    id: 1,
+    id: 3,
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" className="fill-current">
         <path
@@ -47,7 +47,7 @@ const servicesData: Feature[] = [
       "Create Key Performance Indicators to quantify outcome measurement and create a dashboard and process for continuous improvement.",
   },
   {
-    id: 1,
+    id: 4,
     icon: (
       <svg width="40" height="42" viewBox="0 0 40 42" className="fill-current">
         <path
@@ -62,7 +62,7 @@ const servicesData: Feature[] = [
       "Clarify requirements, develop selection criteria and weightings, and make recommendations.​​",
   },
   {
-    id: 1,
+    id: 5,
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" className="fill-current">
         <path
@@ -77,7 +77,7 @@ const servicesData: Feature[] = [
       "Review existing process, survey best practice, look for opportunities to automate, and recommend an improvement path.​​",
   },
   {
-    id: 1,
+    id: 6,
     icon: (
       <svg width="40" height="45" viewBox="0 0 40 45" className="fill-current">
         <path
