@@ -1,5 +1,17 @@
 # NPTech Advisor - Nonprofit Technology Advisory Platform
 
+## ⚠️ CRITICAL: Security
+
+**NEVER commit secrets to git:**
+- NO real passwords, API keys, tokens, or credentials in ANY files
+- Use placeholders: `username:password`, `your-token-here`, `your-api-key`
+- Check before every commit: `git diff --cached`
+- Real secrets ONLY in `.env.local` or `.env` files (git-ignored)
+
+**Reference:** @/home/brian/SECURITY.md
+
+---
+
 ## Project Status
 - **Status**: Active development - Next.js 16.0.8, React 19
 - **Purpose**: Nonprofit technology advisory platform for helping organizations with tech decisions
@@ -18,7 +30,7 @@
 ### Start Development Server
 ```bash
 cd /home/brian/workspace/development/nptechadvisor
-npm run dev
+npm run dev -p 3001
 # Server runs on http://localhost:3001
 ```
 
